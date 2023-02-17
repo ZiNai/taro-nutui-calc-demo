@@ -1,4 +1,5 @@
 import {
+  Button,
   Cell,
   Icon,
   Infiniteloading,
@@ -96,6 +97,7 @@ export default function Index() {
   return (
     <>
       {/* 计算方式 */}
+
       <div>
         <Tabs
           className="tab"
@@ -324,6 +326,9 @@ export default function Index() {
         <TabbarItem tabTitle="购物车" href="https://m.jd.com" icon="cart" />
         <TabbarItem tabTitle="我的" href="/" icon="my" />
       </Tabbar> */}
+      <Button block className="button" type="primary" shape="square">
+        开始计算
+      </Button>
     </>
   );
 }

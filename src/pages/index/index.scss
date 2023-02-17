@@ -1,3 +1,6 @@
+:root {
+  font-size: 100rpx;
+}
 .nutui-react-demo {
     height: 100vh;
     display: flex;
@@ -9,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    font-size: 24rpx;
     margin-bottom: 30px;
   }
   .title{
@@ -23,5 +26,9 @@
     margin-right: 20px;
     margin-bottom: 20px;
   }
+  // .button{
+  //   margin-left:10px;
+  //   margin-right: 10px;
+  // }
   
   
