@@ -123,7 +123,8 @@ export default function Index() {
             <Input
               name="number"
               label="首付选择"
-              placeholder="0"
+              placeholder="30%(0万)"
+              rightIcon="right"
               type="number"
             />
             {/* <>
@@ -170,12 +171,14 @@ export default function Index() {
               name="number"
               label="公积金年限"
               placeholder="30年"
+              rightIcon="right"
               type="number"
             />
             <Input
               name="number"
               label="公积金利率"
               placeholder="3.25%（最新基准利率1倍）"
+              rightIcon="right"
               type="number"
             />
             <Input
@@ -188,17 +191,31 @@ export default function Index() {
               name="number"
               label="商代年限"
               placeholder="0"
+              rightIcon="right"
               type="number"
             />
             <Input
               name="number"
               label="利率方式"
-              placeholder="0"
+              placeholder="使用最新LPR"
+              rightIcon="right"
               type="number"
             />
-            <Input name="number" label="LPR" placeholder="4.65" type="number" />
-            {/* <Icon name="ask" /> */}
-            <Input name="number" label="基点" placeholder="0" type="number" />
+            <Input
+              name="number"
+              label="LPR"
+              placeholder="4.65"
+              leftIcon="ask"
+              type="number"
+            />
+
+            <Input
+              name="number"
+              label="基点"
+              placeholder="0"
+              leftIcon="ask"
+              type="number"
+            />
             <Input
               name="number"
               label="商代利率"
@@ -211,16 +228,30 @@ export default function Index() {
               name="number"
               label="商贷年限"
               placeholder="30年"
+              rightIcon="right"
               type="number"
             />
             <Input
               name="number"
               label="利率方式"
               placeholder="使用最新LPR"
+              rightIcon="right"
               type="number"
             />
-            <Input name="number" label="LPR" placeholder="4.65" type="number" />
-            <Input name="number" label="基点" placeholder="0" type="number" />
+            <Input
+              name="number"
+              label="LPR"
+              placeholder="4.65"
+              leftIcon="ask"
+              type="number"
+            />
+            <Input
+              name="number"
+              label="基点"
+              placeholder="0"
+              leftIcon="ask"
+              type="number"
+            />
             <Input
               name="number"
               label="商代利率"
@@ -233,12 +264,14 @@ export default function Index() {
               name="number"
               label="公积金年限"
               placeholder="30年"
+              rightIcon="right"
               type="number"
             />
             <Input
               name="number"
               label="公积金利率"
               placeholder="3.25%（最新基准利率1倍）"
+              rightIcon="right"
               type="number"
             />
           </TabPane>
