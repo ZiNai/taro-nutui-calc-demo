@@ -10,6 +10,7 @@ import {
   TabbarItem,
   TabPane,
   Tabs,
+  Video,
 } from "@nutui/nutui-react-taro";
 import { useEffect, useState } from "react";
 import "./index.scss";
@@ -68,6 +69,18 @@ export default function Index() {
 
   const [salcTabValue, setSalcTabvalue] = useState("0");
   const [loanTabvalue, setLoanTabvalue] = useState("0");
+  const [source, setSource] = useState({
+    src: "https://storage.360buyimg.com/nutui/video/video_NutUI.mp4",
+    type: "video/mp4",
+  });
+  const options = {
+    autoplay: true,
+    muted: true,
+    controls: true,
+  };
+  const play = (elm: HTMLVideoElement) => console.log("play", elm);
+  const pause = (elm: HTMLVideoElement) => console.log("pause", elm);
+  const playend = (elm: HTMLVideoElement) => console.log("playend", elm);
   // const [isVisible1, setIsVisible1] = useState(false);
   // const [baseDefault, setbaseDefault] = useState("15%(0万)");
   // const listData1 = [
@@ -349,6 +362,15 @@ export default function Index() {
         <TabbarItem tabTitle="购物车" href="https://m.jd.com" icon="cart" />
         <TabbarItem tabTitle="我的" href="/" icon="my" />
       </Tabbar> */}
+      <Cell className="cell">
+        <Video
+          source={source}
+          options={options}
+          onPlayFuc={play}
+          onPauseFuc={pause}
+          onPlayend={playend}
+        />
+      </Cell>
       <Button block className="button" type="primary" shape="square">
         开始计算
       </Button>
