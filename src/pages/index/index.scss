@@ -1,5 +1,5 @@
 :root {
-  font-size: 100rpx;
+  font-size: 24rpx;
 }
 .nutui-react-demo {
     height: 100vh;
@@ -26,9 +26,27 @@
     margin-right: 20px;
     margin-bottom: 20px;
   }
-  // .button{
-  //   margin-left:10px;
-  //   margin-right: 10px;
-  // }
+  .button{
+    // margin-left:10px;
+    // margin-right: 10px;
+    background-color: rgb(9, 197, 109)
+  }
+  .calcRes{
+    background-color: rgb(9, 197, 109);
+  }
+  .calcRes-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .calcRes2{
+    display: flex;
+    
+    justify-content: space-between;
+  }
+  .calcRes-header2{
+    display: grid;
+    justify-items: end;
+  }
   
   

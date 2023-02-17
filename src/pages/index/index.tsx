@@ -96,6 +96,29 @@ export default function Index() {
   // };
   return (
     <>
+      {/* 计算结果 */}
+      <div className="calcRes">
+        <div className="calcRes-header">
+          <h4>房屋总价--万</h4>
+          <h5>
+            查看历史 <Icon name="rect-right" size={20} />
+          </h5>
+        </div>
+        <h6>
+          首付30%、公积金贷20万·30年·利率3.25%、商业贷款12万·30年·利率4.66%、等额本息
+        </h6>
+      </div>
+      <div className="calcRes2">
+        <h4>首付款--</h4>
+        <div className="calcRes-header2">
+          <h5>每月应还（等额本息）</h5>
+          <h5>1234元 </h5>
+          <h6>
+            等额本金月供 <Icon name="rect-right" size={20} />
+          </h6>
+        </div>
+      </div>
+
       {/* 计算方式 */}
 
       <div>
