@@ -109,7 +109,7 @@ export default function Index() {
             <Input
               name="number"
               label="贷款总额"
-              placeholder="0"
+              placeholder="0万"
               type="number"
             />
           </TabPane>
@@ -117,7 +117,7 @@ export default function Index() {
             <Input
               name="number"
               label="房屋总价"
-              placeholder="0"
+              placeholder="0万"
               type="number"
             />
             <Input
@@ -143,7 +143,7 @@ export default function Index() {
             <Input
               name="number"
               label="贷款金额"
-              placeholder="0"
+              placeholder="0万"
               type="number"
             />
           </TabPane>
@@ -164,7 +164,7 @@ export default function Index() {
             <Input
               name="number"
               label="公积金金额"
-              placeholder="0"
+              placeholder="0万"
               type="number"
             />
             <Input
@@ -184,13 +184,13 @@ export default function Index() {
             <Input
               name="number"
               label="商代金额"
-              placeholder="0"
+              placeholder="0万"
               type="number"
             />
             <Input
               name="number"
               label="商代年限"
-              placeholder="0"
+              placeholder="0年"
               rightIcon="right"
               type="number"
             />
@@ -204,7 +204,7 @@ export default function Index() {
             <Input
               name="number"
               label="LPR"
-              placeholder="4.65"
+              placeholder="4.65 %"
               leftIcon="ask"
               type="number"
             />
@@ -212,7 +212,7 @@ export default function Index() {
             <Input
               name="number"
               label="基点"
-              placeholder="0"
+              placeholder="0 BP(‱)"
               leftIcon="ask"
               type="number"
             />
