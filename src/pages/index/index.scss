@@ -34,7 +34,9 @@
     bottom:0px
   }
   .calcRes{
-    background-color: rgb(9, 197, 109);
+    background-color: rgb(0, 255, 179);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
   }
   .calcRes-header{
     display: flex;
@@ -48,7 +50,7 @@
   }
   .calcRes-header2{
     display: grid;
-    justify-items: end;
+    justify-items: start;
   }
   
   
