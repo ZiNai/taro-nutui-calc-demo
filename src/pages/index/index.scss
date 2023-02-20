@@ -48,18 +48,27 @@
     // display: grid;
     // grid-template-rows: 1fr 1fr;
   }
+  #repayment{
+    height: 120px;
+  }
   .detailRes{
     background-color: white;
     color:black !important;
-    margin: 0px;
+    margin: 0 auto;
+    width:80%;
+    height: 90px;
+    position: relative;
+    bottom: 40px;
   }
-  .nut-cell__value{
+  .calcRes>div.nut-cell__value{
     color:white;
   }
- .nut-cell__link{
+ .calcRes>i.nut-cell__link{
     color:white;
   }
-
+.detailRes>div.nut-cell__value{
+  color:black;
+}
   .nut-tabs__titles-item__line{
     background-color: #23c993 !important;
    
