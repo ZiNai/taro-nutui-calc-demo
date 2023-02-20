@@ -411,15 +411,6 @@ export default function Index() {
         <TabbarItem tabTitle="购物车" href="https://m.jd.com" icon="cart" />
         <TabbarItem tabTitle="我的" href="/" icon="my" />
       </Tabbar> */}
-      <Cell className="cell">
-        <Video
-          source={source}
-          options={options}
-          onPlayFuc={play}
-          onPauseFuc={pause}
-          onPlayend={playend}
-        />
-      </Cell>
       <Button block className="button" type="primary" shape="square">
         开始计算
       </Button>
