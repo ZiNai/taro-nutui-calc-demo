@@ -47,13 +47,16 @@
     margin: 0px;
     // display: grid;
     // grid-template-rows: 1fr 1fr;
-    
-   
+  }
+  .detailRes{
+    background-color: white;
+    color:black !important;
+    margin: 0px;
   }
   .nut-cell__value{
     color:white;
   }
-  .nut-cell__link{
+ .nut-cell__link{
     color:white;
   }
 

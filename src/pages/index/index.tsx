@@ -137,12 +137,21 @@ export default function Index() {
           首付30%、公积金贷20万·30年·利率3.25%、商业贷款12万·30年·利率4.66%、等额本息
         </div>
       </Cell>
-      <Cell
+      <h4>首付款--</h4>
+      <div className="calcRes-header2">
+        <h5>每月应还（等额本息）</h5>
+        <h5>1234元 </h5>
+        <h6>
+          等额本金月供 <Icon name="rect-right" size={20} />
+        </h6>
+      </div>
+      {/* <Cell
+        className="detailRes"
         title="首付款--"
-        desc=" 对比等额本金月供"
+        desc="每月应还（等额本息） 1234元 对比等额本金月供"
         isLink
         url="/pages/detail/index"
-      />
+      /> */}
       {/* </CellGroup> */}
 
       {/* 计算方式 */}

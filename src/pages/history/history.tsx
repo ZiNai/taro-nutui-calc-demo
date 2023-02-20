@@ -1,4 +1,4 @@
-import { Table } from "@nutui/nutui-react-taro";
+import { Icon, NavBar, Table } from "@nutui/nutui-react-taro";
 import { useState } from "react";
 
 interface TableColumnProps {
@@ -50,5 +50,19 @@ export default function Index() {
     },
   ]);
 
-  return <Table columns={columns1} data={data1} />;
+  return (
+    <>
+      <NavBar
+        title="历史记录"
+        leftShow
+        leftText="返回"
+        onClickTitle={(e) => alert("标题")}
+        onClickBack={(e) => alert("返回")}
+        onClickRight={(e) => alert("icon")}
+      >
+        <Icon name="share" slot="right" />
+      </NavBar>
+      <Table columns={columns1} data={data1} />;
+    </>
+  );
 }
