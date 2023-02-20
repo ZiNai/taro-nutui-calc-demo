@@ -9,7 +9,7 @@ interface TableColumnProps {
   render?: (rowData?: any, rowIndex?: number) => string | React.ReactNode;
 }
 
-export default function ViewTab() {
+export default function Index() {
   const [columns1, setColumns1] = useState<Array<TableColumnProps>>([
     {
       title: "公积金贷30年",
