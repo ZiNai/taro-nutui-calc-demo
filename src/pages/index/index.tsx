@@ -1,6 +1,7 @@
 import {
   Button,
   Cell,
+  CellGroup,
   Icon,
   Infiniteloading,
   Input,
@@ -71,18 +72,7 @@ export default function Index() {
 
   const [salcTabValue, setSalcTabvalue] = useState("0");
   const [loanTabvalue, setLoanTabvalue] = useState("0");
-  const [source, setSource] = useState({
-    src: "https://storage.360buyimg.com/nutui/video/video_NutUI.mp4",
-    type: "video/mp4",
-  });
-  const options = {
-    autoplay: true,
-    muted: true,
-    controls: true,
-  };
-  const play = (elm: HTMLVideoElement) => console.log("play", elm);
-  const pause = (elm: HTMLVideoElement) => console.log("pause", elm);
-  const playend = (elm: HTMLVideoElement) => console.log("playend", elm);
+
   // const [isVisible1, setIsVisible1] = useState(false);
   // const [baseDefault, setbaseDefault] = useState("15%(0万)");
   // const listData1 = [
@@ -113,7 +103,7 @@ export default function Index() {
   return (
     <>
       {/* 计算结果 */}
-      <Cell className="calcRes">
+      {/* <Cell className="calcRes">
         <div className="calcRes-header">
           <h4>房屋总价--万</h4>
           <h5>
@@ -133,7 +123,27 @@ export default function Index() {
             等额本金月供 <Icon name="rect-right" size={20} />
           </h6>
         </div>
+      </Cell> */}
+      {/* <CellGroup> */}
+      <Cell
+        className="calcRes"
+        title="房屋总价--万"
+        desc="查看历史"
+        isLink
+        url="/pages/history/index"
+      />
+      <Cell className="calcRes">
+        <div>
+          首付30%、公积金贷20万·30年·利率3.25%、商业贷款12万·30年·利率4.66%、等额本息
+        </div>
       </Cell>
+      <Cell
+        title="首付款--"
+        desc=" 对比等额本金月供"
+        isLink
+        url="/pages/detail/index"
+      />
+      {/* </CellGroup> */}
 
       {/* 计算方式 */}
 

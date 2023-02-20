@@ -73,8 +73,10 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.4.18",
     "react-refresh": "^0.11.0",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0",
     "stylelint": "^14.4.0",
     "typescript": "^4.1.0",
-    "webpack": "5.69.0"
+    "webpack": "^5.69.0"
   }
 }
