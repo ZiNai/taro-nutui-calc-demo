@@ -142,7 +142,7 @@ export default function Index() {
       <Cell
         className="detailRes"
         title="首付款--"
-        desc="每月应还（等额本息） 1234元 对比等额本金月供"
+        desc="每月应还（等额本息）1234元 对比等额本金月供"
         isLink
         url="/pages/detail/index"
       />

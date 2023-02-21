@@ -63,15 +63,6 @@
     opacity: 0.5;
 }
 
-  // #repayment{
-  //   height: 120px;
-  //   background-image:url("img.png");
-  //   background-repeat: no-repeat;
-  //   background-position: right 75%;
-  //   background-size: contain;
-
-  // }
-
   .detailRes{
     background-color: white;
     color:black !important;
@@ -91,10 +82,13 @@
   color:black;
 }
   .nut-tabs__titles-item__line{
-    background-color: #23c993 !important;
+    background: #23c993 !important;
+    color:#23c993 !important;
    
   }
- .nutui-tabs-titles-item-active-color{
-  background-color: #23c993 !important;
- }
-  
+//  .nutui-tabs-titles-item-active-color{
+//   background: #23c993 !important;
+//  }
+.nut-tabs__titles-item.active .nut-tabs__titles-item__text{
+  color: #23c993 !important;
+}
