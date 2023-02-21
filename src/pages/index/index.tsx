@@ -80,37 +80,117 @@ export default function Index() {
   // const [showIconDefine, setShowIconDefine] = useState(false);
   const [showBasic1, setShowBasic1] = useState(false);
 
-  // function setShowBasic(arg0: boolean) {
-  //   throw new Error("Function not implemented.");
-  // }
+  //选择器：公积金年限
+  const [isVisible1, setIsVisible1] = useState(false);
+  const [baseDefault, setbaseDefault] = useState("");
+  const listData1 = [
+    [
+      { value: 5, text: "5年" },
+      { value: 10, text: "10年" },
+      { value: 15, text: "15年" },
+      { value: 20, text: "20年" },
+      { value: 25, text: "25年" },
+      { value: 30, text: "30年" },
+    ],
+  ];
+  const confirmPicker = (
+    values: (string | number)[],
+    options: PickerOption[]
+  ) => {
+    let desc = "";
+    options.forEach((option: any) => {
+      desc += option.text;
+    });
+    setbaseDefault(desc);
+  };
 
-  // const [isVisible1, setIsVisible1] = useState(false);
-  // const [baseDefault, setbaseDefault] = useState("15%(0万)");
-  // const listData1 = [
-  //   [
-  //     { value: 1, text: "15%(0万)" },
-  //     { value: 2, text: "20%(0万)" },
-  //     { value: 3, text: "25%(0万)" },
-  //     { value: 4, text: "30%(0万)" },
-  //     { value: 5, text: "35%(0万)" },
-  //     { value: 6, text: "40%(0万)" },
-  //     { value: 7, text: "45%(0万)" },
-  //     { value: 8, text: "50%(0万)" },
-  //     { value: 9, text: "55%(0万)" },
-  //     { value: 10, text: "60%(0万)" },
-  //   ],
-  // ];
-  // const confirmPicker = (
-  //   values: (string | number)[],
-  //   options: PickerOption[]
-  // ) => {
-  //   let desc = "";
-  //   options.forEach((option: any) => {
-  //     desc += option.text;
-  //   });
-  //   setbaseDefault(desc);
-  // };
-
+  //商代年限
+  const [isVisible4, setIsVisible4] = useState(false);
+  const [baseDefault4, setbaseDefault4] = useState("");
+  const listData4 = [
+    [
+      { value: 5, text: "5年" },
+      { value: 10, text: "10年" },
+      { value: 15, text: "15年" },
+      { value: 20, text: "20年" },
+      { value: 25, text: "25年" },
+      { value: 30, text: "30年" },
+    ],
+  ];
+  const confirmPicker4 = (
+    values: (string | number)[],
+    options: PickerOption[]
+  ) => {
+    let desc = "";
+    options.forEach((option: any) => {
+      desc += option.text;
+    });
+    setbaseDefault4(desc);
+  };
+  //公积金利率
+  const [isVisible2, setIsVisible2] = useState(false);
+  const [baseDefault2, setbaseDefault2] = useState("");
+  const listData2 = [
+    [
+      { value: 0.0325, text: "3.25% (最新基准利率1倍)" },
+      { value: 0.0358, text: "3.58% (最新基准利率1.1倍)" },
+      { value: 0.039, text: "3.9% (最新基准利率1.2倍)" },
+      { value: 0.0423, text: "4.23% (最新基准利率1.3倍)" },
+    ],
+  ];
+  const confirmPicker2 = (
+    values: (string | number)[],
+    options: PickerOption[]
+  ) => {
+    let desc = "";
+    options.forEach((option: any) => {
+      desc += option.text;
+    });
+    setbaseDefault2(desc);
+  };
+  //利率方式
+  const [isVisible3, setIsVisible3] = useState(false);
+  const [baseDefault3, setbaseDefault3] = useState("");
+  const listData3 = [
+    [
+      { value: 0.043, text: "使用最新LPR" },
+      { value: 0.049, text: "使用旧版基准利率" },
+    ],
+  ];
+  const confirmPicker3 = (
+    values: (string | number)[],
+    options: PickerOption[]
+  ) => {
+    let desc = "";
+    options.forEach((option: any) => {
+      desc += option.text;
+    });
+    setbaseDefault3(desc);
+  };
+  //首付选择
+  const [isVisible5, setIsVisible5] = useState(false);
+  const [baseDefault5, setbaseDefault5] = useState("");
+  const listData5 = [
+    [
+      { value: 0.15, text: "15%(2万)" },
+      { value: 0.2, text: "20%(2万)" },
+      { value: 0.25, text: "25%(3万)" },
+      { value: 0.3, text: "30%(4万)" },
+      { value: 0.35, text: "35%(4万)" },
+      { value: 0.4, text: "40%(5万)" },
+      { value: 0.45, text: "45%(6万)" },
+    ],
+  ];
+  const confirmPicker5 = (
+    values: (string | number)[],
+    options: PickerOption[]
+  ) => {
+    let desc = "";
+    options.forEach((option: any) => {
+      desc += option.text;
+    });
+    setbaseDefault5(desc);
+  };
   return (
     <main className="indexMain">
       {/* 计算结果 */}
@@ -168,20 +248,18 @@ export default function Index() {
             placeholder="30%(0万)"
             type="number"
             rightIcon="right"
+            defaultValue={baseDefault5}
+            onClickRightIcon={() => setIsVisible5(!isVisible5)}
           />
-          {/* <>
-              <Cell
-                title="首付选择"
-                desc={baseDefault}
-                onClick={() => setIsVisible1(!isVisible1)}
-              />
-              <Picker
-                isVisible={isVisible1}
-                listData={listData1}
-                onConfirm={(values, list) => confirmPicker(values, list)}
-                onClose={() => setIsVisible1(false)}
-              />
-            </> */}
+
+          <Picker
+            isVisible={isVisible5}
+            teleport={document.body}
+            listData={listData5}
+            onConfirm={(values, list) => confirmPicker5(values, list)}
+            onClose={() => setIsVisible5(false)}
+          />
+
           <Input
             name="number"
             label="贷款金额"
@@ -215,6 +293,14 @@ export default function Index() {
             placeholder="30年"
             rightIcon="right"
             type="number"
+            defaultValue={baseDefault}
+            onClickRightIcon={() => setIsVisible1(!isVisible1)}
+          />
+          <Picker
+            isVisible={isVisible1}
+            listData={listData1}
+            onConfirm={(values, list) => confirmPicker(values, list)}
+            onClose={() => setIsVisible1(false)}
           />
           <Input
             name="number"
@@ -222,6 +308,14 @@ export default function Index() {
             placeholder="3.25%（最新基准利率1倍）"
             rightIcon="right"
             type="number"
+            defaultValue={baseDefault2}
+            onClickRightIcon={() => setIsVisible2(!isVisible2)}
+          />
+          <Picker
+            isVisible={isVisible2}
+            listData={listData2}
+            onConfirm={(values, list) => confirmPicker2(values, list)}
+            onClose={() => setIsVisible2(false)}
           />
           <Input
             name="number"
@@ -231,17 +325,34 @@ export default function Index() {
           />
           <Input
             name="number"
-            label="商代年限"
+            label="商贷年限"
             placeholder="0年"
             rightIcon="right"
             type="number"
+            defaultValue={baseDefault4}
+            onClickRightIcon={() => setIsVisible4(!isVisible4)}
           />
+          <Picker
+            isVisible={isVisible4}
+            listData={listData4}
+            onConfirm={(values, list) => confirmPicker4(values, list)}
+            onClose={() => setIsVisible4(false)}
+          />
+
           <Input
             name="number"
             label="利率方式"
             placeholder="使用最新LPR"
             rightIcon="right"
             type="number"
+            defaultValue={baseDefault3}
+            onClickRightIcon={() => setIsVisible3(!isVisible3)}
+          />
+          <Picker
+            isVisible={isVisible3}
+            listData={listData3}
+            onConfirm={(values, list) => confirmPicker3(values, list)}
+            onClose={() => setIsVisible3(false)}
           />
           <Input
             name="number"
@@ -249,6 +360,7 @@ export default function Index() {
             placeholder="4.65 %"
             leftIcon="ask"
             type="number"
+            // defaultValue={4.65}
             onClickLeftIcon={() => {
               setShowBasic(true);
             }}
@@ -318,17 +430,34 @@ export default function Index() {
         <TabPane title="商业贷">
           <Input
             name="number"
-            label="商贷年限"
-            placeholder="30年"
+            label="商代年限"
+            placeholder="0年"
             rightIcon="right"
             type="number"
+            defaultValue={baseDefault4}
+            onClickRightIcon={() => setIsVisible4(!isVisible4)}
           />
+          <Picker
+            isVisible={isVisible4}
+            listData={listData4}
+            onConfirm={(values, list) => confirmPicker4(values, list)}
+            onClose={() => setIsVisible4(false)}
+          />
+
           <Input
             name="number"
             label="利率方式"
             placeholder="使用最新LPR"
             rightIcon="right"
             type="number"
+            defaultValue={baseDefault3}
+            onClickRightIcon={() => setIsVisible3(!isVisible3)}
+          />
+          <Picker
+            isVisible={isVisible3}
+            listData={listData3}
+            onConfirm={(values, list) => confirmPicker3(values, list)}
+            onClose={() => setIsVisible3(false)}
           />
           <Input
             name="number"
