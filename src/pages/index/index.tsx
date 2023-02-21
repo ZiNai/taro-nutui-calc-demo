@@ -102,7 +102,7 @@ export default function Index() {
   // };
 
   return (
-    <>
+    <main className="indexMain">
       {/* 计算结果 */}
       {/* <Cell className="calcRes">
         <div className="calcRes-header">
@@ -382,6 +382,6 @@ export default function Index() {
       <Button block className="button" type="primary" shape="square">
         开始计算
       </Button>
-    </>
+    </main>
   );
 }
