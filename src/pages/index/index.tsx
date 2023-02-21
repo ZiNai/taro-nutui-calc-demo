@@ -15,6 +15,7 @@ import {
   Video,
 } from "@nutui/nutui-react-taro";
 import { useEffect, useState } from "react";
+
 import "./index.scss";
 // const InfiniteUlStyle = {
 //   height: "300px",
