@@ -7,12 +7,12 @@ import {
   Input,
   Notify,
   Picker,
+  Popup,
   Tabbar,
   TabbarItem,
   Table,
   TabPane,
   Tabs,
-  Video,
 } from "@nutui/nutui-react-taro";
 import { useEffect, useState } from "react";
 
@@ -74,6 +74,16 @@ export default function Index() {
   const [salcTabValue, setSalcTabvalue] = useState("0");
   const [loanTabvalue, setLoanTabvalue] = useState("0");
 
+  // 弹出层
+  const [showBasic, setShowBasic] = useState(false);
+  // const [showIcon, setShowIcon] = useState(false);
+  // const [showIconDefine, setShowIconDefine] = useState(false);
+  const [showBasic1, setShowBasic1] = useState(false);
+
+  // function setShowBasic(arg0: boolean) {
+  //   throw new Error("Function not implemented.");
+  // }
+
   // const [isVisible1, setIsVisible1] = useState(false);
   // const [baseDefault, setbaseDefault] = useState("15%(0万)");
   // const listData1 = [
@@ -104,28 +114,7 @@ export default function Index() {
   return (
     <main className="indexMain">
       {/* 计算结果 */}
-      {/* <Cell className="calcRes">
-        <div className="calcRes-header">
-          <h4>房屋总价--万</h4>
-          <h5>
-            查看历史 <Icon name="rect-right" size={20} />
-          </h5>
-        </div>
-        <h6>
-          首付30%、公积金贷20万·30年·利率3.25%、商业贷款12万·30年·利率4.66%、等额本息
-        </h6>
-      </Cell>
-      <Cell className="calcRes2">
-        <h4>首付款--</h4>
-        <div className="calcRes-header2">
-          <h5>每月应还（等额本息）</h5>
-          <h5>1234元 </h5>
-          <h6>
-            等额本金月供 <Icon name="rect-right" size={20} />
-          </h6>
-        </div>
-      </Cell> */}
-      {/* <CellGroup> */}
+
       <Cell
         className="calcRes"
         title="房屋总价--万"
@@ -147,42 +136,40 @@ export default function Index() {
         url="/pages/detail/index"
       />
 
-      {/* </CellGroup> */}
-
       {/* 计算方式 */}
 
-      <div>
-        <Tabs
-          className="tab"
-          autoHeight
-          value={salcTabValue}
-          onChange={({ paneKey }) => {
-            setSalcTabvalue(paneKey);
-          }}
-        >
-          <TabPane title="按贷款总额">
-            <Input
-              name="number"
-              label="贷款总额"
-              placeholder="0万"
-              type="number"
-            />
-          </TabPane>
-          <TabPane title="按房屋总价">
-            <Input
-              name="number"
-              label="房屋总价"
-              placeholder="0万"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="首付选择"
-              placeholder="30%(0万)"
-              rightIcon="right"
-              type="number"
-            />
-            {/* <>
+      <Tabs
+        className="tab"
+        autoHeight
+        value={salcTabValue}
+        onChange={({ paneKey }) => {
+          setSalcTabvalue(paneKey);
+        }}
+      >
+        <TabPane title="按贷款总额">
+          <Input
+            name="number"
+            label="贷款总额"
+            placeholder="0万"
+            type="number"
+          />
+        </TabPane>
+        <TabPane title="按房屋总价">
+          <Input
+            name="number"
+            label="房屋总价"
+            placeholder="0万"
+            type="number"
+          />
+
+          <Input
+            name="number"
+            label="首付选择"
+            placeholder="30%(0万)"
+            type="number"
+            rightIcon="right"
+          />
+          {/* <>
               <Cell
                 title="首付选择"
                 desc={baseDefault}
@@ -195,143 +182,225 @@ export default function Index() {
                 onClose={() => setIsVisible1(false)}
               />
             </> */}
-            <Input
-              name="number"
-              label="贷款金额"
-              placeholder="0万"
-              type="number"
-            />
-          </TabPane>
-        </Tabs>
-      </div>
+          <Input
+            name="number"
+            label="贷款金额"
+            placeholder="0万"
+            type="number"
+          />
+        </TabPane>
+      </Tabs>
 
       {/* 贷款方式 */}
-      <div>
-        <Tabs
-          className="tab"
-          autoHeight
-          value={loanTabvalue}
-          onChange={({ paneKey }) => {
-            setLoanTabvalue(paneKey);
-          }}
-        >
-          <TabPane title="组合贷">
-            <Input
-              name="number"
-              label="公积金金额"
-              placeholder="0万"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="公积金年限"
-              placeholder="30年"
-              rightIcon="right"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="公积金利率"
-              placeholder="3.25%（最新基准利率1倍）"
-              rightIcon="right"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="商代金额"
-              placeholder="0万"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="商代年限"
-              placeholder="0年"
-              rightIcon="right"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="利率方式"
-              placeholder="使用最新LPR"
-              rightIcon="right"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="LPR"
-              placeholder="4.65 %"
-              leftIcon="ask"
-              type="number"
-            />
 
-            <Input
-              name="number"
-              label="基点"
-              placeholder="0 BP(‱)"
-              leftIcon="ask"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="商代利率"
-              placeholder="4.65% + 0‱ = "
-              type="number"
-            />
-          </TabPane>
-          <TabPane title="商业贷">
-            <Input
-              name="number"
-              label="商贷年限"
-              placeholder="30年"
-              rightIcon="right"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="利率方式"
-              placeholder="使用最新LPR"
-              rightIcon="right"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="LPR"
-              placeholder="4.65"
-              leftIcon="ask"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="基点"
-              placeholder="0"
-              leftIcon="ask"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="商代利率"
-              placeholder="4.65% + 0‱ = "
-              type="number"
-            />
-          </TabPane>
-          <TabPane title="公积金贷">
-            <Input
-              name="number"
-              label="公积金年限"
-              placeholder="30年"
-              rightIcon="right"
-              type="number"
-            />
-            <Input
-              name="number"
-              label="公积金利率"
-              placeholder="3.25%（最新基准利率1倍）"
-              rightIcon="right"
-              type="number"
-            />
-          </TabPane>
-        </Tabs>
-      </div>
+      <Tabs
+        className="tab"
+        autoHeight
+        value={loanTabvalue}
+        onChange={({ paneKey }) => {
+          setLoanTabvalue(paneKey);
+        }}
+      >
+        <TabPane title="组合贷">
+          <Input
+            name="number"
+            label="公积金金额"
+            placeholder="0万"
+            type="number"
+          />
+
+          <Input
+            name="number"
+            label="公积金年限"
+            placeholder="30年"
+            rightIcon="right"
+            type="number"
+          />
+          <Input
+            name="number"
+            label="公积金利率"
+            placeholder="3.25%（最新基准利率1倍）"
+            rightIcon="right"
+            type="number"
+          />
+          <Input
+            name="number"
+            label="商代金额"
+            placeholder="0万"
+            type="number"
+          />
+          <Input
+            name="number"
+            label="商代年限"
+            placeholder="0年"
+            rightIcon="right"
+            type="number"
+          />
+          <Input
+            name="number"
+            label="利率方式"
+            placeholder="使用最新LPR"
+            rightIcon="right"
+            type="number"
+          />
+          <Input
+            name="number"
+            label="LPR"
+            placeholder="4.65 %"
+            leftIcon="ask"
+            type="number"
+            onClickLeftIcon={() => {
+              setShowBasic(true);
+            }}
+          />
+          <Popup
+            visible={showBasic}
+            style={{ padding: "30px 50px" }}
+            onClose={() => {
+              setShowBasic(false);
+            }}
+            teleport={document.body}
+          >
+            <h6 className="askPopupTittle">LPR（贷款市场报价利率）</h6>
+            <p className="askPopupText">
+              自2019年10月起，商贷利率开始改用LPR贷款市场报价利率计算。LPR基准利率每月更新一次，实际贷款利率在LPR的基础上进行一定的浮动。
+            </p>
+          </Popup>
+          {/* <Cell
+            title="关闭图标"
+            isLink
+            onClick={() => {
+              setShowIcon(true);
+            }}
+          />
+          <Popup
+            closeable
+            visible={showIcon}
+            style={{ height: "20%" }}
+            position="bottom"
+            onClose={() => {
+              setShowIcon(false);
+            }}
+          >
+            text
+          </Popup> */}
+
+          <Input
+            name="number"
+            label="基点"
+            placeholder="0 BP(‱)"
+            leftIcon="ask"
+            type="number"
+            onClickLeftIcon={() => {
+              setShowBasic1(true);
+            }}
+          />
+          <Popup
+            visible={showBasic1}
+            style={{ padding: "30px 50px" }}
+            onClose={() => {
+              setShowBasic1(false);
+            }}
+            teleport={document.body}
+          >
+            <h6 className="askPopupTittle"> 什么是基点?</h6>
+            <p className="askPopupText">
+              如果浮动10个1个基点=0.01%，基点，相当于在LPR的基础上增加0.1%为实际贷款利率。
+            </p>
+          </Popup>
+          <Input
+            name="number"
+            label="商代利率"
+            placeholder="4.65% + 0‱ = "
+            type="number"
+          />
+        </TabPane>
+        <TabPane title="商业贷">
+          <Input
+            name="number"
+            label="商贷年限"
+            placeholder="30年"
+            rightIcon="right"
+            type="number"
+          />
+          <Input
+            name="number"
+            label="利率方式"
+            placeholder="使用最新LPR"
+            rightIcon="right"
+            type="number"
+          />
+          <Input
+            name="number"
+            label="LPR"
+            placeholder="4.65 %"
+            leftIcon="ask"
+            type="number"
+            onClickLeftIcon={() => {
+              setShowBasic(true);
+            }}
+          />
+          <Popup
+            visible={showBasic}
+            style={{ padding: "30px 50px" }}
+            onClose={() => {
+              setShowBasic(false);
+            }}
+            teleport={document.body}
+          >
+            <h6 className="askPopupTittle">LPR（贷款市场报价利率）</h6>
+            <p className="askPopupText">
+              自2019年10月起，商贷利率开始改用LPR贷款市场报价利率计算。LPR基准利率每月更新一次，实际贷款利率在LPR的基础上进行一定的浮动。
+            </p>
+          </Popup>
+
+          <Input
+            name="number"
+            label="基点"
+            placeholder="0 BP(‱)"
+            leftIcon="ask"
+            type="number"
+            onClickLeftIcon={() => {
+              setShowBasic1(true);
+            }}
+          />
+          <Popup
+            visible={showBasic1}
+            style={{ padding: "30px 50px" }}
+            onClose={() => {
+              setShowBasic1(false);
+            }}
+            teleport={document.body}
+          >
+            <h6 className="askPopupTittle"> 什么是基点?</h6>
+            <p className="askPopupText">
+              如果浮动10个1个基点=0.01%，基点，相当于在LPR的基础上增加0.1%为实际贷款利率。
+            </p>
+          </Popup>
+          <Input
+            name="number"
+            label="商代利率"
+            placeholder="4.65% + 0‱ = "
+            type="number"
+          />
+        </TabPane>
+        <TabPane title="公积金贷">
+          <Input
+            name="number"
+            label="公积金年限"
+            placeholder="30年"
+            rightIcon="right"
+            type="number"
+          />
+          <Input
+            name="number"
+            label="公积金利率"
+            placeholder="3.25%（最新基准利率1倍）"
+            rightIcon="right"
+            type="number"
+          />
+        </TabPane>
+      </Tabs>
 
       {/* 滚动加载 */}
       {/* <div>
