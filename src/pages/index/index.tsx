@@ -200,7 +200,7 @@ export default function Index() {
         title="房屋总价--万"
         desc="查看历史"
         isLink
-        url="/pages/history/index"
+        // url="/pages/history/index"
       />
       <Cell className="calcRes" id="repayment">
         <div>
@@ -213,7 +213,7 @@ export default function Index() {
         title="首付款--"
         desc="每月应还（等额本息）1234元 对比等额本金月供"
         isLink
-        url="/pages/detail/index"
+        // url="/pages/detail/index"
       />
 
       {/* 计算方式 */}
@@ -251,15 +251,14 @@ export default function Index() {
             defaultValue={baseDefault5}
             onClickRightIcon={() => setIsVisible5(!isVisible5)}
           />
-
+          {/* <Popup teleport={document.body}> */}
           <Picker
             isVisible={isVisible5}
-            teleport={document.body}
             listData={listData5}
             onConfirm={(values, list) => confirmPicker5(values, list)}
             onClose={() => setIsVisible5(false)}
           />
-
+          {/* </Popup> */}
           <Input
             name="number"
             label="贷款金额"
@@ -296,12 +295,14 @@ export default function Index() {
             defaultValue={baseDefault}
             onClickRightIcon={() => setIsVisible1(!isVisible1)}
           />
+          {/* <Popup teleport={document.body}> */}
           <Picker
             isVisible={isVisible1}
             listData={listData1}
             onConfirm={(values, list) => confirmPicker(values, list)}
             onClose={() => setIsVisible1(false)}
           />
+          {/* </Popup> */}
           <Input
             name="number"
             label="公积金利率"
@@ -311,12 +312,14 @@ export default function Index() {
             defaultValue={baseDefault2}
             onClickRightIcon={() => setIsVisible2(!isVisible2)}
           />
+          {/* <Popup teleport={document.body}> */}
           <Picker
             isVisible={isVisible2}
             listData={listData2}
             onConfirm={(values, list) => confirmPicker2(values, list)}
             onClose={() => setIsVisible2(false)}
           />
+          {/* </Popup> */}
           <Input
             name="number"
             label="商代金额"
@@ -332,13 +335,14 @@ export default function Index() {
             defaultValue={baseDefault4}
             onClickRightIcon={() => setIsVisible4(!isVisible4)}
           />
+          {/* <Popup teleport={document.body}> */}
           <Picker
             isVisible={isVisible4}
             listData={listData4}
             onConfirm={(values, list) => confirmPicker4(values, list)}
             onClose={() => setIsVisible4(false)}
           />
-
+          {/* </Popup> */}
           <Input
             name="number"
             label="利率方式"
@@ -348,12 +352,14 @@ export default function Index() {
             defaultValue={baseDefault3}
             onClickRightIcon={() => setIsVisible3(!isVisible3)}
           />
+          {/* <Popup teleport={document.body}> */}
           <Picker
             isVisible={isVisible3}
             listData={listData3}
             onConfirm={(values, list) => confirmPicker3(values, list)}
             onClose={() => setIsVisible3(false)}
           />
+          {/* </Popup> */}
           <Input
             name="number"
             label="LPR"
@@ -366,12 +372,12 @@ export default function Index() {
             }}
           />
           <Popup
+            teleport={document.body}
             visible={showBasic}
             style={{ padding: "30px 50px" }}
             onClose={() => {
               setShowBasic(false);
             }}
-            teleport={document.body}
           >
             <h6 className="askPopupTittle">LPR（贷款市场报价利率）</h6>
             <p className="askPopupText">
@@ -408,12 +414,12 @@ export default function Index() {
             }}
           />
           <Popup
+            teleport={document.body}
             visible={showBasic1}
             style={{ padding: "30px 50px" }}
             onClose={() => {
               setShowBasic1(false);
             }}
-            teleport={document.body}
           >
             <h6 className="askPopupTittle"> 什么是基点?</h6>
             <p className="askPopupText">
@@ -437,13 +443,14 @@ export default function Index() {
             defaultValue={baseDefault4}
             onClickRightIcon={() => setIsVisible4(!isVisible4)}
           />
+          {/* <Popup teleport={document.body}> */}
           <Picker
             isVisible={isVisible4}
             listData={listData4}
             onConfirm={(values, list) => confirmPicker4(values, list)}
             onClose={() => setIsVisible4(false)}
           />
-
+          {/* </Popup> */}
           <Input
             name="number"
             label="利率方式"
@@ -453,12 +460,14 @@ export default function Index() {
             defaultValue={baseDefault3}
             onClickRightIcon={() => setIsVisible3(!isVisible3)}
           />
+          {/* <Popup teleport={document.body}> */}
           <Picker
             isVisible={isVisible3}
             listData={listData3}
             onConfirm={(values, list) => confirmPicker3(values, list)}
             onClose={() => setIsVisible3(false)}
           />
+          {/* </Popup> */}
           <Input
             name="number"
             label="LPR"
@@ -520,14 +529,34 @@ export default function Index() {
             placeholder="30年"
             rightIcon="right"
             type="number"
+            defaultValue={baseDefault}
+            onClickRightIcon={() => setIsVisible1(!isVisible1)}
           />
+          {/* <Popup teleport={document.body}> */}
+          <Picker
+            isVisible={isVisible1}
+            listData={listData1}
+            onConfirm={(values, list) => confirmPicker(values, list)}
+            onClose={() => setIsVisible1(false)}
+          />
+          {/* </Popup> */}
           <Input
             name="number"
             label="公积金利率"
             placeholder="3.25%（最新基准利率1倍）"
             rightIcon="right"
             type="number"
+            defaultValue={baseDefault2}
+            onClickRightIcon={() => setIsVisible2(!isVisible2)}
           />
+          {/* <Popup teleport={document.body}> */}
+          <Picker
+            isVisible={isVisible2}
+            listData={listData2}
+            onConfirm={(values, list) => confirmPicker2(values, list)}
+            onClose={() => setIsVisible2(false)}
+          />
+          {/* </Popup> */}
         </TabPane>
       </Tabs>
 
